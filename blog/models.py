@@ -8,12 +8,19 @@ class Post(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(
             default=timezone.now)
+    category =  models.IntegerField(choices=((1, ("Motoryzacja")),
+                                        (2, ("Elektronika")),
+                                        (3, ("Usługi")),
+                                        (4, ("Sport")),
+                                        (5, ("Inne"))),
+                                        default=1)
     published_date = models.DateTimeField(
             blank=True, null=True)
-
     def publish(self):
-        self.published_date = timezone.now()
+        self.published_date = timezone.now()    
         self.save()
 
     def __str__(self):
         return self.title
+
+

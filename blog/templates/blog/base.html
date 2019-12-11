@@ -12,7 +12,17 @@
         <div class="page-header">
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
-        <div class="content container">
+        <div class="content container-fluid">
+        <div class="side-bar">
+            <ul>
+                <li><a class="btn btn-default" href="{% url 'motoryzacja_category' %}">Motoryzacja</a></li>
+                <li><a class="btn btn-default" href="{% url 'elektronika_category' %}">Elektronika</a></li>
+                <li><a class="btn btn-default" href="{% url 'sport_category' %}">Sport</a></li>
+                <li><a class="btn btn-default" href="{% url 'uslugi_category' %}">Usługi</a></li>
+                <li><a class="btn btn-default" href="{% url 'inne_category' %}">Inne</a></li>
+            </ul>
+        </div>
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="addpost glyphicon glyphicon-plus"></span></a>
             <div class="row">
                 <div class="col-md-8">
                     {% block content %}
